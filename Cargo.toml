@@ -13,11 +13,18 @@ debug = true # Symbols are nice and they don't increase the size on Flash
 opt-level = "z"
 
 [features]
+default = ["experimental"]
 pio = ["esp-idf-sys/pio"]
+experimental = ["esp-idf-svc/experimental", "esp-idf-hal/experimental", "embedded-svc/experimental"]
 
 [dependencies]
 esp-idf-sys = { version = "0.31.5", features = ["binstart"] }
-
+esp-idf-svc = "0.41"
+esp-idf-hal = "0.37"
+embedded-svc = "0.21"
+wake-on-lan = "0.2"
+anyhow = {version = "1", features = ["backtrace"]}
+log = "0.4"
 
 [build-dependencies]
 embuild = "0.29"
