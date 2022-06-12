@@ -169,7 +169,7 @@ fn main() -> Result<(), anyhow::Error> {
     let wifi = init_wifi(netif_stack, sys_loop_stack, default_nvs)?;
 
     while patrol_iteration().is_ok() {
-        thread::sleep(Duration::from_secs(15))
+        thread::sleep(Duration::from_millis(INTERVAL_MILLIS))
     }
 
     for i in 0..3 {

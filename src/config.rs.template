@@ -3,3 +3,4 @@ pub const WIFI_PASS: &str = "";
 pub const WOL_MAC_ADDRESS: [u8; 6] = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00];
 pub const API_URL_GET: &str = "";
 pub const API_URL_POST: &str = "";
+pub const INTERVAL_MILLIS: u64 = 15000;
