@@ -1,3 +1,5 @@
+#![no_main]
+
 use esp_idf_sys as _; // If using the `binstart` feature of `esp-idf-sys`, always keep this module imported
 
 mod config;
@@ -156,7 +158,8 @@ fn patrol_iteration() -> Result<(), anyhow::Error> {
     Ok(())
 }
 
-fn main() -> Result<(), anyhow::Error> {
+#[no_mangle]
+fn app_main() -> Result<(), anyhow::Error> {
     // Temporary. Will disappear once ESP-IDF 4.4 is released, but for now it is necessary to call this function once,
     // or else some patches to the runtime implemented by esp-idf-sys might not link properly.
     esp_idf_sys::link_patches();
